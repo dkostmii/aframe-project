@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <style>
+      body {
+        padding: 2rem;
+        margin: 0;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <a-scene embedded>
+      <!-- define your gltf asset -->
+      <a-assets>
+        <a-asset-item id="tank" src="t-84_oplotlow_poly.glb"></a-asset-item>
+      </a-assets>
+      <a-marker preset="hiro">
+        <!-- use your glb model -->
+        <a-entity scale="0.001 0.001 0.001" gltf-model="#tank"></a-entity>
+        <a-text scale="2.5 2.5 2.5" position="0 4 0" align="center" value="T84 Oplot"></a-text>
+        <a-image scale="10 10 10" rotation="90 0 0" position="0 0.1 0" src="texture-grass-field_1080.jpg"></a-image>
+      </a-marker>
+      <!-- <a-camera position="0 3 10"></a-camera> -->
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
